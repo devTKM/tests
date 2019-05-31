@@ -17,11 +17,11 @@
 function segue(){
 window.location.href='https://github.com/devTKM/tests';
 }
-document.getElementById("github").onclick=function(){
+var form = document.getElementById("github");
+form.onclick=function(){
 gtag('config', 'UA-141206160-2');
-setTimeout(segue, 2000);
-gtag('event', 'segue', {'event_callback':{segue();
-}});
+gtag('event', 'segue');
+segue();
 };
 </script>
 </body>
