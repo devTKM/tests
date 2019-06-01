@@ -13,6 +13,7 @@
 </head>
 <body>
 <button id="github">bdsdgfafaxcafaf</button>
+<button id="a"></button>
 <script>
 function segue(){
 window.location.href='https://github.com/devTKM/tests';
@@ -22,6 +23,15 @@ form.onclick=function(){
 gtag('config', 'UA-141206160-2');
 gtag('event', 'segue');
 segue();
+};
+
+document.getElementById("a").onclick=function(){
+gtag('config', 'UA-141206160-2');
+gtag('event', 'a', {
+'event_category':'b',
+'event_label':'c',
+'value':1
+});
 };
 </script>
 </body>
