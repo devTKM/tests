@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-14206160-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-141206160-1');
+const nodemailer = require('nodemailer')
+const mailTransport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: "lemedylemedy@gmail.com",
+        pass: "lishlemedyblu"
+    }
+})
 </script>
 </head>
 <body>
 <h1>INDEX</h1>
-<button id="button">TTTTTTTTTTTTT</button>
+<button onclick=mail()>TTTTTTTTTTTTT</button>
 <script>
-document.getElementById("button").onclick=function(){
-gtag('config', 'UA-141206160-2');
-gtag('event', 'YATTA!');
-};
+function mail(){
+    let email = {
+        from: "lemedylemedy@gmail.com",
+        to: "amano.juperu@gmail.com",
+        subject: 'test message',
+        text: 'This is a test message from vue.'
+    }
+    mailTransport.sendMail(email, (err, info) => {
+        if (err) {
+            return console.log(err)
+        }
+        return console.log('success')
+    })
+}
 </script>
 </body>
 </html>
